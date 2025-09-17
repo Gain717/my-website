@@ -1,9 +1,22 @@
-body{
-    background-color: beige;
+body {
+  position: relative;
+  z-index: 0; /* 子要素より背面に置く */
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-image: url(111.png);
+  background-repeat: repeat;
+  opacity: 0.5; /* ここだけ透過 */
+  z-index: -1;
 }
 
 h1{
+    color:orange;
+    background-color:beige;
     text-align: center;
+    font-weight: bold;
 }
 
 .container{
@@ -13,12 +26,15 @@ h1{
 
 header,
 footer{
+    color:orchid;
     background-color: yellow;
     grid-column: 1 / span 3;
     margin: 20px;
     border: 5px solid aqua;
     padding: 20px;
     text-align: center;
+    font-weight: bold;
+    font-size:20px;
 }
 
 .c1,
@@ -29,6 +45,6 @@ footer{
     background-color: green;
     border: 10px solid gray;
     height: 100px;
-    font-size: 20px;
+    font-size: 30px;
     place-items: center;
 }
